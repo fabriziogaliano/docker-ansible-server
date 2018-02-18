@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#Creation of Ansible User
+sudo adduser --quiet --home /home/ansible --shell /bin/bash --disabled-password ansible
+sudo mkdir -p /home/ansible/.ssh
+sudo chmod 700 /home/ansible/.ssh
+
+#Make Ansible User Sudoers
+sudo usermod -aG sudo ansible
+sudo echo "ansible   ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/000-ansible
+
+#RSA Ansible key
+sudo echo "YOUR RSA PUB KEY HERE" >> /home/ansible/.ssh/authorized_keys
+sudo chmod 600 /home/ansible/.ssh/authorized_keys
+sudo chown ansible.ansible /home/ansible/ -R
+
+#Install prerequisites tools
+sudo apt update && apt install python awscli -y

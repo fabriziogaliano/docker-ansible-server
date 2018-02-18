@@ -1,0 +1,42 @@
+---
+
+- name: Install and configure SNMPD
+  hosts: all
+  become: true
+  become_user: root
+  gather_facts: true
+  tasks:
+     - name: install snmp requirements
+       apt: 
+         name: "{{ item }}"
+         state: latest
+         update_cache: yes
+       with_items:
+         - snmp
+         - snmpd
+         - snmp-mibs-downloader
+         - libsnmp-dev
+
+     - name: stop snmpd
+       systemd: 
+         name: snmpd
+         state: stopped
+      
+     - name: Snmpd Config file open cacti address
+       lineinfile:
+         path: /etc/snmp/snmpd.conf
+         backrefs: yes
+         regexp: udp.127\.0\.0\.1.161
+         line: "agentAddress  udp:161"
+
+     - name: Create snmp User
+       shell: net-snmp-config --create-snmpv3-user -ro -A snmppasswordhere snmpuserhere
+       notify:
+        - "enable snmpd"
+
+  handlers:
+     - name: enable snmpd
+       systemd: 
+         name: snmpd
+         enabled: yes
+         state: started

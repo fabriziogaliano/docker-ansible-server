@@ -1,0 +1,21 @@
+---
+
+- name: Install sysad tool
+  hosts: all
+  become: true
+  become_user: root
+  gather_facts: true
+  tasks:
+     - name: install tool
+       apt:
+         name: "{{ item }}"
+         state: latest
+         update_cache: yes
+       with_items:
+         - htop
+         - iftop
+         - iptraf
+         - ncdu
+      
+     - name: install csysdig
+       shell: curl -s https://s3.amazonaws.com/download.draios.com/stable/install-sysdig | sudo bash
