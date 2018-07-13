@@ -52,7 +52,7 @@ sudo chmod 600 /home/ansible/.ssh/authorized_keys
 sudo chown ansible.ansible /home/ansible/ -R
 
 #Install prerequisites tools
-sudo apt update && apt install python -y
+sudo apt update && apt install python python-apt -y
 
 
 ```
