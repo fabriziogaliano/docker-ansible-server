@@ -7,7 +7,11 @@ Docker image based on ubuntu 16.04 with Ansible Server preinstalled
 
 ```
 
-docker run -it --name ansible fabriziogaliano/ansible-server
+docker run --rm -it \
+-v "/home/to/docker-ansible-server/playbook:/etc/ansible/playbook" \
+-v "/home/to/docker-ansible-server/hosts:/etc/ansible/hosts" \
+fabriziogaliano/ansible-server \
+bash
 
 ```
 
