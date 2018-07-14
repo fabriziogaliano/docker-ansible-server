@@ -50,7 +50,7 @@
         - restart docker
 
   handlers:
-    - name: restarting docker
+    - name: restart docker
       systemd: 
         name: docker 
         state: restarted
