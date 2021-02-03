@@ -3,6 +3,19 @@
 
 Docker image based on ubuntu 16.04 with Ansible Server preinstalled
 
+
+## Version
+
+```
+v1.1 = ansible 2.8.4
+     - google-cloud-sdk null
+     - kubectl null
+
+v1.2 = ansible 2.9.17
+     - google-cloud-sdk  326.0.0
+     - kubectl 1.20.2
+```
+
 ## Example
 
 ```
