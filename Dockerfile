@@ -1,10 +1,16 @@
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 
-RUN echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" >> /etc/apt/sources.list
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
 RUN apt-get update
-RUN apt-get install software-properties-common curl -y
-RUN apt-get install ansible vim python-pip pssh gettext-base -y
+# RUN DEBIAN_FRONTEND=noninteractive apt install -yqq \
+#                     software-properties-common
+RUN DEBIAN_FRONTEND=noninteractive apt install -yqq \
+                    ansible=2.9.6+dfsg-1 \
+                    vim \
+                    python3-pip \
+                    pssh \
+                    gettext-base \
+                    curl \
+                    mariadb-client-10.3
 
 # install GCP SDK and Kubectl
 RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
