@@ -17,6 +17,7 @@ RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.
 RUN apt-get install apt-transport-https ca-certificates gnupg -y
 RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 RUN pip install --upgrade pip
+RUN pip install PyMySQL
 RUN apt-get update && apt-get install google-cloud-sdk kubectl -y
 RUN apt-get clean
 
