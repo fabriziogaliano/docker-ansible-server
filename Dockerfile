@@ -19,7 +19,9 @@ RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key --keyri
 RUN pip install --upgrade pip
 RUN pip install PyMySQL
 RUN apt-get update && apt-get install google-cloud-sdk kubectl -y
-RUN apt-get clean
+RUN apt-get clean autoclean && \
+    apt-get autoremove --yes && \
+    rm -rf /var/lib/{apt,dpkg,cache,log}
 
 #RUN pip install requests google-auth
 
