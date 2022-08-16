@@ -1,7 +1,7 @@
 # docker-ansible-server
 [![](https://images.microbadger.com/badges/version/fabriziogaliano/ansible-server.svg)](https://microbadger.com/images/fabriziogaliano/ansible-server "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/fabriziogaliano/ansible-server.svg)](https://microbadger.com/images/fabriziogaliano/ansible-server "Get your own image badge on microbadger.com")
 
-Docker image based on ubuntu 16.04 with Ansible Server preinstalled
+Docker image based on ubuntu 20.04 with Ansible Server preinstalled
 
 
 ## Version
