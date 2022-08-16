@@ -47,7 +47,7 @@ chmod 600 /root/.ssh/id_rsa.pub /root/.ssh/id_rsa
 
 ```
 
-#Script tested on Ubuntu 16.04
+#Script tested on Ubuntu 20.04
 
 #!/bin/bash
 #Creation of Ansible User
