@@ -7,13 +7,25 @@ Docker image based on ubuntu 20.04 with Ansible Server preinstalled
 ## Version
 
 ```
-v1.1 = ansible 2.8.4
-     - google-cloud-sdk null
-     - kubectl null
+v1.3 = ansible 2.9.6+dfsg-1
+     - Google Cloud SDK 407.0.0
+       - alpha 2022.10.21
+       - beta 2022.10.21
+       - bq 2.0.79
+       - bundled-python3-unix 3.9.12
+       - core 2022.10.21
+       - gcloud-crc32c 1.0.0
+       - gsutil 5.15
+     - kubectl 1.25.3
+     - kustomize 4.5.7
 
 v1.2 = ansible 2.9.17
      - google-cloud-sdk  326.0.0
      - kubectl 1.20.2
+
+v1.1 = ansible 2.8.4
+     - google-cloud-sdk null
+     - kubectl null
 ```
 
 ## Example
