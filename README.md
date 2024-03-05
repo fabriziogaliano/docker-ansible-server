@@ -7,6 +7,8 @@ Docker image based on ubuntu 20.04 with Ansible Server preinstalled
 ## Version
 
 ```
+v1.3.1 = ansible-galaxy community.mysql
+
 v1.3 = ansible 2.9.6+dfsg-1
      - Google Cloud SDK 407.0.0
        - alpha 2022.10.21

@@ -28,3 +28,6 @@ RUN apt-get clean autoclean && \
 COPY ./docker /docker
 RUN mv /docker/config/ansible.cfg /etc/ansible/ansible.cfg
 COPY ./ssh /root/.ssh
+
+### ADDON Andible
+RUN ansible-galaxy collection install community.mysql
