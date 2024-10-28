@@ -7,6 +7,18 @@ Docker image based on ubuntu 20.04 with Ansible Server preinstalled
 ## Version
 
 ```
+v1.4.0 = ansible 2.16.3-0ubuntu2
+     - Python3.12
+     - Google Cloud SDK 498.0.0
+       - alpha 2024.10.18
+       - beta 2024.10.18
+       - bq 2.1.9
+       - core 2024.10.18
+       - gcloud-crc32c 1.0.0
+       - gsutil 5.31
+       - istioctl 1.20.47
+     - kubectl 1.30.5
+
 v1.3.1 = ansible-galaxy community.mysql
 
 v1.3 = ansible 2.9.6+dfsg-1
